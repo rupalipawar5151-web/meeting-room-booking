@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting Room Booking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Meeting Room Booking</h1>
+    <p class="tagline">Reserve a room, see the day at a glance.</p>
+  </header>
+
+  <main class="layout">
+
+    <!-- LEFT: booking form -->
+    <section class="panel form-panel">
+      <h2>Book a room</h2>
+
+      <form id="bookingForm">
+        <label for="roomId">Room</label>
+        <select id="roomId" required></select>
+
+        <label for="bookedBy">Your name</label>
+        <input type="text" id="bookedBy" placeholder="e.g. Rupali Pawar" required>
+
+        <label for="purpose">Purpose</label>
+        <input type="text" id="purpose" placeholder="e.g. Client review call" required>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" required>
+
+        <div class="time-row">
+          <div>
+            <label for="startTime">Start</label>
+            <input type="time" id="startTime" required>
+          </div>
+          <div>
+            <label for="endTime">End</label>
+            <input type="time" id="endTime" required>
+          </div>
+        </div>
+
+        <button type="submit">Book room</button>
+      </form>
+
+      <p id="message" class="message"></p>
+    </section>
+
+    <!-- RIGHT: daily room chart -->
+    <section class="panel chart-panel">
+      <div class="chart-header">
+        <h2>Room availability</h2>
+        <input type="date" id="chartDate">
+      </div>
+
+      <div id="chartArea" class="chart-area">
+        <!-- filled in by chart.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/chart.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
